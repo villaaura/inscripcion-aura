@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - AURA ACROACADÉMIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-principal: #f706a2; /* Color rojo de la academia */
+            --color-fondo: #9b9c9c;
+            --color-texto: #f2f6f7;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--color-fondo); 
+            color: var(--color-texto); 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            justify-content: center; 
+        }
+
+        .form-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            max-width: 600px; 
+            width: 100%; 
+            border-top: 8px solid var(--color-principal); 
+        }
+
+        /* Espacio para el LOGO */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-placeholder {
+            max-width: 150px;
+            height: auto;
+            /* Si tienes el archivo del logo, cambia "logo.png" por tu ruta */
+        }
+
+        h1 { 
+            text-align: center; 
+            color: #2c3e50; 
+            margin-bottom: 10px; 
+            font-size: 1.6rem; 
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        h3 { 
+            background: #fff5f4; 
+            padding: 12px; 
+            border-left: 5px solid var(--color-principal); 
+            font-size: 1rem; 
+            margin-top: 30px; 
+            color: #f706a2;
+        }
+
+        .field { margin-bottom: 20px; }
+        
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 700; 
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        input[type="text"], input[type="date"], input[type="tel"] { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid #eee; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            font-size: 1rem; 
+            transition: border-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--color-principal);
+        }
+
+        .radio-group { 
+            margin: 15px 0; 
+            padding: 20px; 
+            background: #fdfdfd; 
+            border: 1px dashed #ddd;
+            border-radius: 8px; 
+        }
+
+        .radio-option { margin-bottom: 12px; display: flex; align-items: center; cursor: pointer; }
+        .radio-option input { margin-right: 12px; cursor: pointer; width: 18px; height: 18px; }
+
+        .footer-info { 
+            margin-top: 30px; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
+
+        button { 
+            width: 100%; 
+            background-color: var(--color-principal); 
+            color: white; 
+            border: none; 
+            padding: 18px; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+            font-weight: 700; 
+            cursor: pointer; 
+            margin-top: 40px; 
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover { 
+            background-color: #f706a2; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px #f706a2ba(231, 76, 60, 0.3);
+        }
+
+        @media (max-width: 480px) { .footer-info { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="logo-container">
+        <img src="AURAlogo.png" alt="Logo Aura Acroacadémia" class="logo-placeholder">
+    </div>
+
+    <h1>Ficha de Inscripción</h1>
+    <p class="subtitle">Bienvenido a AURA ACROACADÉMIA</p>
+
+    <form action="https://formspree.io/f/mnjbjenn" method="POST">
+        
+        <h3>DATOS PERSONALES</h3>
+        <div class="field">
+            <label>Nombre y Apellido</label>
+            <input type="text" name="alumno_nombre" placeholder="Juan Pérez" required>
+        </div>
+        <div class="field">
+            <label>DNI / Nº de Identificación</label>
+            <input type="text" name="alumno_dni" placeholder="00.000.000" required>
+        </div>
+        <div class="field">
+            <label>Fecha de Nacimiento</label>
+            <input type="date" name="alumno_nacimiento" required>
+        </div>
+        <div class="field">
+            <label>Dirección</label>
+            <input type="text" name="alumno_direccion" placeholder="Calle Falsa 123" required>
+        </div>
+        <div class="field">
+            <label>Teléfono</label>
+            <input type="tel" name="alumno_tel" placeholder="+54 9 ..." required>
+        </div>
+
+        <h3>CONTACTO DE EMERGENCIA</h3>
+        <div class="field">
+            <label>Nombre y Apellido del contacto</label>
+            <input type="text" name="emergencia_nombre" required>
+        </div>
+        <div class="field">
+            <label>Teléfono de Emergencia</label>
+            <input type="tel" name="emergencia_tel" required>
+        </div>
+        <div class="field">
+            <label>Relación con el Alumno</label>
+            <input type="text" name="emergencia_parentesco" placeholder="Ej: Madre, Padre, Tutor">
+        </div>
+
+        <h3>AUTORIZACIÓN DE IMAGEN</h3>
+        <p style="font-size: 0.85rem; color: #636e72; line-height: 1.5;">
+            Autorizo a <strong>AURA ACROACADÉMIA</strong> a utilizar mi imagen y voz en videos publicitarios y promocionales para redes sociales.
+        </p>
+        
+        <div class="radio-group">
+            <label class="radio-option">
+                <input type="radio" name="autorizacion" value="si" required> Sí, autorizo
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="autorizacion" value="no"> No autorizo
+            </label>
+        </div>
+
+        <div class="footer-info">
+            <div class="field">
+                <label>Firma (Aclaración)</label>
+                <input type="text" name="firma_digital" required>
+            </div>
+            <div class="field">
+                <label>Fecha</label>
+                <input type="date" name="fecha_firma" required>
+            </div>
+        </div>
+
+        <button type="submit">Enviar Inscripción</button>
+    </form>
+</div>
+
+</body>
+</html>
